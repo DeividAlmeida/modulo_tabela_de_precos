@@ -55,7 +55,7 @@ $po = $central['posição'];
       font-size: 14px;
       position: fixed;
       right:  90px;
-      bottom:70px;
+      bottom:40px;
       box-shadow: 2px 2px 13px rgba(0,0,0,0.1);
       border: 1px solid #e2e2e2;
       border-radius: 5px;
@@ -68,7 +68,7 @@ $po = $central['posição'];
    #big_box{
       position: fixed;
       right: 30px; 
-      bottom: 130px;
+      bottom: 100px;
       margin: 0;
       padding: 0;
       display: none;
@@ -78,8 +78,8 @@ $po = $central['posição'];
 @media only screen and (min-width: 539px) {
   #big_box{
       position: fixed;
-      right: 180px; 
-      bottom: 130px;
+      right: 160px; 
+      bottom: 100px;
       margin: 0;
       padding: 0;
       display: none;
@@ -99,7 +99,7 @@ $po = $central['posição'];
       font-size: 14px;
       position: fixed;
       left: 90px;
-      bottom:70px;
+      bottom:40px;
       box-shadow: 2px 2px 13px rgba(0,0,0,0.1);
       border: 1px solid #e2e2e2;
       border-radius: 5px;
@@ -128,8 +128,8 @@ $po = $central['posição'];
     }
       #big_box{
       position: fixed;
-      left: 40px; 
-      bottom: 130px;
+      left: 10px; 
+      bottom: 100px;
       margin: 0;
       padding: 0;
       display: none;
@@ -155,7 +155,7 @@ $po = $central['posição'];
     #bt_all{
     	position: fixed;
     	right: 110px; 
-    	bottom: 120px;
+    	bottom: 90px;
     	z-index:1;
     }
 
@@ -167,7 +167,7 @@ $po = $central['posição'];
 	    color: #fff; 
 	    position: fixed; 
     	<?php echo $central['posição']; ?>: 10px; 
-    	bottom: 50px;
+    	bottom: 20px;
 	    width: 70px; 
 	    height: 70px; 
 	    background-color:<?php echo $central['cor']; ?>;
