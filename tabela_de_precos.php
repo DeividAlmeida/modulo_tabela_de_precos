@@ -19,7 +19,7 @@
 		<div class="container-fluid text-white">
 			<div class="row p-t-b-10 ">
 				<div class="col">
-					<h4><i class="icon-shopping-cart"></i> <?php echo $TitlePage; ?></h4>
+					<h4><i class="icon-usd"></i> <?php echo $TitlePage; ?></h4>
 				</div>
 			</div>
 		</div>

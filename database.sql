@@ -2,7 +2,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 INSERT INTO `modulos` (`nome`, `url`, `icone`, `status`, `ordem`, `tabela`, `cod_head`, `data_atualizacao`, `chave`)
-SELECT 'Tabela de Precos', 'tabela_de_precos.php', 'icon-shopping-cart', 1, 0, 'tabela_de_precos', 'tabela_de_precos/tabela_de_precos.js', '2019-10-24', '72b4b1d7ce2b514a981a49b1db5790a7';
+SELECT 'Tabela de Precos', 'tabela_de_precos.php', 'icon-usd', 1, 0, 'tabela_de_precos', 'tabela_de_precos/tabela_de_precos.js', '2019-10-24', '72b4b1d7ce2b514a981a49b1db5790a7';
 
 CREATE TABLE IF NOT EXISTS `tabela_de_precos` (
   `id` int(11) NOT NULL,
