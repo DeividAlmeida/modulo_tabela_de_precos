@@ -2,27 +2,29 @@
 <?php $uniqid = uniqid(); ?>
 <style type="text/css">
   [class*="tc-member-"] img {width: 100%;}
-  .tc-member-style<?php echo $id; ?> {box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.08);-webkit-transform: translateY(0);transform: translateY(0);-webkit-transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);}
-  .tc-member-style<?php echo $id; ?> .member-photo {position: relative;}
-  .tc-member-style<?php echo $id; ?> .member-icons {position: absolute;bottom: 0;background: rgba(255,255,255,0.1);width: 100%;padding: 7px 10px;left: 0;}
-  .tc-member-style<?php echo $id; ?>.member-light .member-icons {background: rgba(0,0,0,0.4);}
-  .tc-member-style<?php echo $id; ?> .member-icon i {font-size: 11px;color: <?php echo $categoria['cor_icone']; ?>;margin: 0 6px;height: 26px;border: 1px solid <?php echo $categoria['cor_borda']; ?>;width: 26px;line-height: 26px;text-align: center;border-radius: 50%;background: transparent;-webkit-transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);}
-  .tc-member-style<?php echo $id; ?> .member-icon i:hover {color: <?php echo $categoria['cor_hover_icone']; ?> !important;}
-  .tc-member-style<?php echo $id; ?> .member-info {padding: 20px 20px;}
-  .tc-member-style<?php echo $id; ?> .member-name {font-size: 18px;margin: 0;}
-  .tc-member-style<?php echo $id; ?> span.member-role {font-size: 12px;color: #999;display: block;}
-  .tc-member-style<?php echo $id; ?>:hover { animation: tc-shake 0.5s;animation-iteration-count: 0.1s;}
-  .tc-member-style<?php echo $id; ?> .member-icon i:hover {background: <?php echo $categoria['cor_hover_botao']; ?>;color: #444;}
-  .tc-member-style<?php echo $id; ?>.member-align-right {text-align: right;}
-  .tc-member-style<?php echo $id; ?>.member-align-center {text-align: center;}
-  .member-photo :hover{background-color: <?php echo $categoria['cor_borda']; ?>;border-radius: 100%; }
+  .tc-member-style1 {box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.08);-webkit-transform: translateY(0);transform: translateY(0);-webkit-transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);}
+  .tc-member-style1 .member-photo {position: relative;}
+  .tc-member-style1 .member-icons {position: absolute;bottom: 0;background: rgba(255,255,255,0.1);width: 100%;padding: 7px 10px;left: 0;}
+  .tc-member-style1 .member-light .member-icons {background: rgba(0,0,0,0.4);}
+  .tc-member-style1 .member-icon i {font-size: 11px;color: <?php echo $categoria['cor_icone']; ?>;margin: 0 6px;height: 26px;border: 1px solid <?php echo $categoria['cor_borda']; ?>;width: 26px;line-height: 26px;text-align: center;border-radius: 50%;background: transparent;-webkit-transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);transition: all .25s cubic-bezier(0.43, 0.44, 0.63, 0.61);}
+  .tc-member-style1 .member-icon i:hover {color: <?php echo $categoria['cor_hover_icone']; ?> !important;}
+  .tc-member-style1 .member-info {padding: 20px 20px;}
+  .tc-member-style1 .member-name {font-size: 18px;margin: 0;}
+  .tc-member-style1 span.member-role {font-size: 12px;color: #999;display: block;}
+  .tc-member-style1:hover { animation: tc-shake 0.5s;animation-iteration-count: 0.1s;}
+  .tc-member-style1 .member-icon i:hover {background: <?php echo $categoria['cor_hover_botao']; ?>;color: #444;}
+  .tc-member-style1 .member-align-right {text-align: right;}
+  .tc-member-style1 .member-align-center {text-align: center;}
+ 
+  <?php if($categoria['efeito_hover'] === 'Não'){echo "/*";}?>
   .member-align-center:hover {-webkit-box-shadow: -600px 0px 0 <?php echo $categoria['cor_icone']; ?> inset !important;-moz-box-shadow: -600px 0px 0 <?php echo $categoria['cor_icone']; ?> inset !important;box-shadow: -600px 0px 0 <?php echo $categoria['cor_icone']; ?> inset !important;}
-  button :hover {background-color: <?php echo $categoria['cor_hover_icone']; ?> !important; color: <?php echo $dados['cor_hover_txt']; ?>;border-radius: 20px;}
+  button :hover {background-color: <?php echo $categoria['cor_hover_icone']; ?> !important; color: <?php echo $categoria['cor_hover_txt']; ?>;border-radius: 20px;}
 .fds:focus,.fds:hover {color:<?php echo $categoria['cor_hover_txt']; ?> !important; text-decoration: underline;}
 .zxc:hover {transition-delay: 2s; background-color: <?php echo $categoria['cor_icone']; ?> !important;  }
 #zxc:hover {transition-delay: 2s; background-color: <?php echo $categoria['cor_icone']; ?> !important;  }
 .member-icon:hover {transition-delay: 2s; background-color: <?php echo $categoria['cor_icone']; ?> !important;}
-</style>
+ .member-photo:hover {background-color: <?php echo $categoria['cor_borda']; ?> !important; border-radius: 100%; }
+*/</style>
 
                                                 <!--  ALL -->
 <section  style="background-color: transparent;padding: 100px 0;" class="wow <?php echo $categoria['efeito']; ?> sec-spacer sec-color">
