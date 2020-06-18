@@ -58,7 +58,7 @@
 								<table id="DataTable" class="table m-0 table-striped">
 									<tr>
 										<th>ID</th>
-										<th>Imagem <i class="icon icon-question-circle tooltips" data-tooltip="Apenas para estilo 6"></i></th>
+										<th>Imagem <i class="icon icon-question-circle tooltips" data-tooltip="Apenas para estilo 5"></i></th>
 										<th>Título</th>
 										<th>Valor</th>
 										<?php if (DadosSession('nivel') == 1) { ?>
@@ -70,7 +70,7 @@
 										<tr>
 											<td><?php echo $dados['id']; ?></td>
 											<td>
-												<img style="display: <?php $id = get('VisualizarCategoria'); $C = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}'")[0];  if ( $C['estilo'] < 6) {echo "none";} ?>;"  src="wa/tabela_de_precos/uploads/<?php echo $dados['imagem_arquivo']; ?>" width="100"></td>
+												<img style="display: <?php $id = get('VisualizarCategoria'); $C = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}'")[0];  if ( $C['estilo'] < 5) {echo "none";} ?>;"  src="wa/tabela_de_precos/uploads/<?php echo $dados['imagem_arquivo']; ?>" width="100"></td>
 											<td><?php echo LimitarTexto($dados['titulo'],'80','...'); ?></td>
 											<td><?php echo LimitarTexto($dados['subtitulo'],'200','...'); ?></td>
 											<?php if (DadosSession('nivel') == 1) { ?>
@@ -173,12 +173,12 @@
 										<div class="form-group" >
 											<label>Nova Guia:</label>
 											<select class="form-control custom-select" name="guia">
-												<option value="target='_blank'">Sim</option>
-												<option value="">Não</option>
+												<option value="Sim" selected>Sim</option>
+												<option value="Não">Não</option>
 											</select>
 										</div>
 									</div>
-									<div class="form-group" style="display: <?php $id = get('AdicionarItem'); $A = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}'")[0];  if ( $A['estilo'] < 6) {
+									<div class="form-group" style="display: <?php $id = get('AdicionarItem'); $A = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}'")[0];  if ( $A['estilo'] < 5) {
 											echo "none";
 										} ?>;" >
 										<label>Imagem: <i class="icon icon-question-circle tooltips" data-toggle="tooltip" data-placement="right" data-tooltip="Resolução da imagem 250x250."></i></label>
@@ -325,11 +325,11 @@
 									<div class="form-group" >
 									<label>Nova Guia:</label>
 									<select class="form-control custom-select" name="guia">
-										<option value="target='_blank'" <?php Selected($dados['guia'], 'S'); ?>>Sim</option>
-										<option value="" <?php Selected($dados['guia'], 'S'); ?>>Não</option>
+										<option value="Sim" <?php Selected($dados['guia'], 'Sim'); ?>>Sim</option>
+										<option value="Não" <?php Selected($dados['guia'], 'Não'); ?>>Não</option>
 									</select>
 								</div>
-									<div class="form-group" style="display: <?php $id = get('radar'); $B = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}'")[0];  if ( $B['estilo'] < 6) {echo "none";} ?>;" >
+									<div class="form-group" style="display: <?php $id = get('radar'); $B = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}'")[0];  if ( $B['estilo'] < 5) {echo "none";} ?>;" >
 										<label>Imagem Atual:</label><br> 
 										<img src="wa/tabela_de_precos/uploads/<?php echo $dados['imagem_arquivo']; ?>" width="100"><br><br>
 										<label>Imagem: <i class="icon icon-question-circle tooltips" data-toggle="tooltip" data-placement="right" data-tooltip="Resolução da imagem 250x250."></i></label>
@@ -466,15 +466,14 @@
 										<option value="2">Estilo 02</option>
 										<option value="3">Estilo 03</option>
 										<option value="4">Estilo 04</option>
-										<option value="5">Estilo 05</option>
-										<option value="6">Estilo 06</option>
+										<option value="5">Estilo 05</option>									
 									</select>
 								</div>
 								<div class="form-group">
 									<label>Efeito Hover:</label>
 									<select class="form-control custom-select" name="efeito_hover">
-										<option value="tc-member-style1">Sim</option>
-										<option value="" selected>Não</option>
+										<option value="Sim" selected>Sim</option>
+										<option value="Não" >Não</option>
 									</select>
 								</div>
 
@@ -690,14 +689,13 @@
 											<option value="3" <?php Selected($dados['estilo'], '3'); ?>>Estilo 03</option>
 											<option value="4" <?php Selected($dados['estilo'], '4'); ?>>Estilo 04</option>
 											<option value="5" <?php Selected($dados['estilo'], '5'); ?>>Estilo 05</option>
-											<option value="6" <?php Selected($dados['estilo'], '6'); ?>>Estilo 06</option>
 										</select>
 									</div>
 									<div class="form-group">
 									<label>Efeito Hover:</label>
 									<select class="form-control custom-select" name="efeito_hover">
-										<option value="tc-member-style1"<?php Selected($dados['efeito_hover'], 'S'); ?>>Sim</option>
-										<option value="" <?php Selected($dados['efeito_hover'], 'S'); ?>>Não</option>
+										<option value="Sim"<?php Selected($dados['efeito_hover'], 'Sim'); ?>>Sim</option>
+										<option value="Não" <?php Selected($dados['efeito_hover'], 'Não'); ?>>Não</option>
 									</select>
 								</div>
 

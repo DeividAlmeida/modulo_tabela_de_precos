@@ -16,7 +16,7 @@
   .tc-member-style<?php echo $id; ?>.member-align-right {text-align: right;}
   .tc-member-style<?php echo $id; ?>.member-align-center {text-align: center;}
   .member-photo :hover{background-color: <?php echo $categoria['cor_borda']; ?> }
-  .member-align-center:hover {background-color: <?php echo $categoria['cor_icone']; ?> !important}
+  .member-align-center:hover {-webkit-box-shadow: -600px 0px 0 <?php echo $categoria['cor_icone']; ?> inset !important;-moz-box-shadow: -600px 0px 0 <?php echo $categoria['cor_icone']; ?> inset !important;box-shadow: -600px 0px 0 <?php echo $categoria['cor_icone']; ?> inset !important;}
   button :hover {background-color: <?php echo $categoria['cor_hover_icone']; ?> !important; color: <?php echo $dados['cor_hover_txt']; ?>;border-radius: 3px;}
 .fds:focus,.fds:hover {color:<?php echo $categoria['cor_hover_txt']; ?> !important; text-decoration: underline;}
 .zxc:hover {transition-delay: 2s; background-color: <?php echo $categoria['cor_icone']; ?> !important;  }
@@ -32,16 +32,17 @@
       <?php foreach ($itens as $i): ?>
         <?php $social = json_decode($i['social'], true); ?>
       <div class="col-sm-<?php echo (12/$categoria['colunas']); ?> "  style="<?php if ($i['featured'] === 'margin-top: 25%'){echo "margin-top: -3%"; }?>;padding-bottom: 40px;">
-        <div class="member-align-center  <?php echo $categoria['efeito_hover']; ?> " id="fds"  style="background-color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_bg_ft'];}else{echo $categoria['cor_botao']; }?>;margin-bottom: 33px;-webkit-box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);min-height: 300px;">
+        <div class="member-align-center  <?php if($categoria['efeito_hover'] === 'Sim'){echo "tc-member-style1";}?> " id="fds"  style="background-color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_bg_ft'];}else{echo $categoria['cor_botao']; }?>;margin-bottom: 33px;-webkit-box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);-webkit-transition-duration: 0.5s;-webkit-transition-timing-function: linear;-moz-box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);-moz-transition-duration: 0.5s;-moz-transition-timing-function: linear;transition-timing-function: linear;
+        transition-duration: 0.5s;min-height: 300px;box-shadow: 0 0 1px #ccc;box-shadow: 0px 0 0 #fff inset;">
 
                                                     <!--  HEAD -->
             <center><br>
-                <div class="member-photo" style="background-color:<?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_bg_ft'];}else{echo $categoria['cor_bg_botao']; }?>;-webkit-box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);width: 85%; ">
+                <div class="member-photo" style="background-color:<?php echo $categoria['cor_bg_botao']; ?>;-webkit-box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);box-shadow: 0 2px 7px 0px rgba(0, 0, 0, 0.1);width: 85%; ">
                     <div style="min-height: 130px;"><div class="badge" style="position: absolute; top: 0;left: 50%;padding: 4px 8px;background-color:<?php echo $i['cor_tg_ft'];?>;color: <?php echo $i['cor_txt_tg_ft'];?>;border-radius: 0 0 5px 5px;font-size: 11px;-webkit-transform: translateX(-50%);transform: translateX(-50%);<?php if ($i['featured'] === 'margin-top: 25%'){}else{echo "display: none"; }?>">       <?php echo $i['tg_txt']; ?>
                     </div><br>
                     <h1 class="member-name" style=" color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_txt_ft'];}else{echo $categoria['cor_titulo']; }?>; font-size: 28px;letter-spacing: 1px; position: relative;  "><?php echo $i['titulo']; ?>           
                     </h1>
-                    <span class="member-role" style="color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_txt_ft'];}else{echo $categoria['cor_subtitulo']; }?>; margin-top: 1%;display: block;font-size: 26px; line-height: normal;font-weight: 600;"><?php echo $i['subtitulo']; ?></span><span class="duration" style="color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_txt_ft'];}else{echo $categoria['cor_subtitulo']; }?>;    display: block;font-size: 11px;margin-top: -5px;color: "><?php echo $i['auxiliar'];?></span>
+                    <span class="member-role" style="color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_txt_ft'];}else{echo $categoria['cor_subtitulo']; }?>; margin-top: 1%;display: block;font-size: 26px; line-height: normal;font-weight: 600;"><?php echo $i['subtitulo']; ?></span><span class="duration" style="color: <?php if ($i['featured'] === 'margin-top: 25%'){ echo $i['cor_txt_ft'];}else{echo $categoria['cor_subtitulo']; }?>;    display: block;font-size: 11px;margin-top: 0px;color: "><?php echo $i['auxiliar'];?></span>
                         </div>
                 </div>
             </center>
