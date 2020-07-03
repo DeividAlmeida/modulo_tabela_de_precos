@@ -214,6 +214,49 @@ if (isset($_GET['AtualizarCategoria'])) {
   }
 }
 
+//Duplica Categoria & Item
+  if (isset($_GET['DuplicarCategoria'])) {
+    if(!checkPermission($PERMISSION, $_SERVER['SCRIPT_NAME'], 'categoria', 'adicionar')){ Redireciona('./index.php'); }
+
+    $id = get('DuplicarCategoria');
+
+    $Query = DBRead('c_tabela_de_precos','*',"WHERE id = '{$id}' LIMIT 1");
+    $Query = $Query[0];
+    $uvo = $Query['id'];
+    unset($Query['id']);
+
+    $Query2 = DBRead('tabela_de_precos','*',"WHERE id_categoria = '{$id}'");
+    unset($Query2['id']);
+$Query1 = DBCreate('c_tabela_de_precos', $Query, true); 
+      foreach ($Query2 as $vl) {
+
+        $data = array(
+    'titulo'        => $vl['titulo'],
+    'id_categoria'  => $Query1,
+    'subtitulo'       => $vl['subtitulo'],
+    'social'          => $vl['social'],
+    'auxiliar'        => $vl['auxiliar'],
+    'txt_bt'          => $vl['txt_bt'],
+    'bt_link'         =>$vl['bt_link'],
+    'guia'            =>$vl['guia'],
+    'featured'        =>$vl['featured'],
+    'cor_bg_ft'       =>$vl['cor_bg_ft'],
+    'cor_txt_ft'      =>$vl['cor_txt_ft'],
+    'cor_tg_ft'       =>$vl['cor_tg_ft'],
+    'cor_txt_tg_ft'   =>$vl['cor_txt_tg_ft'],
+    'tg_txt'          =>$vl['tg_txt'],
+    );
+     DBCreate('tabela_de_precos', $data);
+      }
+
+                
+    
+     if ($Query1 != 0) {
+    Redireciona('?Implementacao&sucesso');
+  } else {
+    Redireciona('?Implementacao&erro');
+  }
+}
 // Excluir Categoria
 if (isset($_GET['DeletarCategoria'])) {
   if(!checkPermission($PERMISSION, $_SERVER['SCRIPT_NAME'], 'categoria', 'deletar')){ Redireciona('./index.php'); }

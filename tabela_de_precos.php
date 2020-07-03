@@ -86,9 +86,8 @@
 <?php } ?>
 															<?php if ($dados['id'] != 0) { ?>
 																<?php if (checkPermission($PERMISSION, $_SERVER['SCRIPT_NAME'], 'item', 'deletar')) { ?>
-																<a class="dropdown-item" onclick="DeletarItem(<?php echo $dados['id']; ?>, 'DeletarItem');" href="#!"><i class="text-danger icon icon-remove"></i> Excluir</a>
-<?php } ?>
-															<?php } ?>
+																<a class="dropdown-item" onclick="DeletarItem(<?php echo $dados['id']; ?>, 'DeletarItem');" href="#!"><i class="text-danger icon icon-remove"></i> Excluir</a><?php } ?>
+															<?php } ?>															
 														</div>
 													</div>
 												</td>
@@ -914,9 +913,11 @@
 <?php } ?>
 														<?php if ($dados['id'] != 0) { ?>
 															<?php if (checkPermission($PERMISSION, $_SERVER['SCRIPT_NAME'], 'categoria', 'deletar')) { ?>
-															<a class="dropdown-item" href="#" onclick="DeletarItem(<?php echo $dados['id']; ?>, 'DeletarCategoria');"><i class="text-danger icon icon-remove"></i> Excluir</a>
-<?php } ?>
+															<a class="dropdown-item" href="#" onclick="DeletarItem(<?php echo $dados['id']; ?>, 'DeletarCategoria');"><i class="text-danger icon icon-remove"></i> Excluir</a><?php } ?>
 														<?php } ?>
+														<?php if (checkPermission($PERMISSION, $_SERVER['SCRIPT_NAME'], 'categoria', 'editar')) { ?>
+																<a class="dropdown-item" href="?DuplicarCategoria=<?php echo $dados['id']; ?>"><i class="text-primary icon icon-clone"></i> Duplicar</a>
+															<?php } ?>
 													</div>
 												</div>
 											</td>
